@@ -23,7 +23,7 @@ namespace WebApplication1.Middleware
 
             //var controllerName = controllerActionDescriptor.ControllerName;
             //var actionName = controllerActionDescriptor.ActionName;
-            var controllerName = "ccc";
+            var controllerName = "ccc desc";
             var actionName = "aaa";
             var dateNow = DateTime.Now;
             var username = httpContext.Request.Query["username"].ToString();
