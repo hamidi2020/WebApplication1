@@ -24,9 +24,9 @@ namespace WebApplication1.Repository
 
                 //  Teacher
 
-               // CourseID = CourseID,
-        Zaman = Zaman,
-       Makan= Makan,
+                CourseID = CourseID,
+                 Zaman = Zaman,
+             Makan= Makan,
                 // public List<Student> Students { get; set; }
 
 

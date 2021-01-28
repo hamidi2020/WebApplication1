@@ -20,6 +20,7 @@ namespace WebApplication1.Models
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<Course> Course { get; set; }
         public DbSet<Kelas> Kelas { get; set; }
+        public DbSet<Log> Log { get; set; }
 
 
 
