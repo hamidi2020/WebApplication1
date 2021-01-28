@@ -17,17 +17,17 @@ namespace WebApplication1.Repository
         }
 
 
-        public Kelas Add(int CourseID, string Zaman,string Makan)
+        public Kelas Add(int CourseID, int TeacherID, string Zaman,string Makan)
         {
+            
             Kelas kelas = new Kelas()
             {
 
-                //  Teacher
-
-                CourseID = CourseID,
+                Teacher = firstDbContext.Teacher.FirstOrDefault(p => p.TeacherID == TeacherID),
+                Cours = firstDbContext.Course.FirstOrDefault(x => x.CourseID == CourseID),
                  Zaman = Zaman,
-             Makan= Makan,
-                // public List<Student> Students { get; set; }
+                 Makan= Makan,
+                
 
 
 

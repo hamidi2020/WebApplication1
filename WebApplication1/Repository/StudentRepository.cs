@@ -43,8 +43,9 @@ namespace WebApplication1.Repository
             return student;
         }
 
-
-
-
+        internal bool UserInRole(string username, string rolename)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
