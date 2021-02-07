@@ -29,6 +29,30 @@ namespace WebApplication1.Repository
             return student;
         }
 
+        public void DeleteStudent(int id)
+        {
+            Student student = firstDbContext.Student.Find(id);
+            if (student != null)
+            {
+                firstDbContext.Student.Remove(student);
+                firstDbContext.SaveChanges();
+            }
+        }
+
+        public IEnumerable<Student> SearchStudent(Func<Student, bool> func)
+        {
+            return firstDbContext.Student.Where(func);
+        }
+
+
+        //public void updateStudent(Student student)
+        //{
+        //    firstDbContext.Entry(student).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+        //    firstDbContext.SaveChanges();
+        //}
+
+
+
         public Student Update(int StudentID, string Fristname, string Lastname)
         {
             Student student = new Student()
@@ -47,5 +71,13 @@ namespace WebApplication1.Repository
         {
             throw new NotImplementedException();
         }
+        public IList<Student> GetList()
+        {
+
+            return firstDbContext.Student.ToList();
+        }
     }
 }
+
+
+

@@ -29,6 +29,28 @@ namespace WebApplication1.Repository
             firstDbContext.SaveChanges();
             return teacher;
         }
+        public void DeleteTeacher(int id)
+        {
+            Teacher teacher = firstDbContext.Teacher.Find(id);
+            if (teacher != null)
+            {
+                firstDbContext.Teacher.Remove(teacher);
+                firstDbContext.SaveChanges();
+            }
+        }
+
+        public IEnumerable<Teacher> SearchTeacher(Func<Teacher, bool> func)
+        {
+            return firstDbContext.Teacher.Where(func);
+        }
+
+
+        //public void updateTeacher(Teacher teacher)
+        //{
+        //    firstDbContext.Entry(teacher).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+        //    firstDbContext.SaveChanges();
+        //}
+
 
         public Teacher Update(int TeacherID, string Fristname, string Lastname)
         {
